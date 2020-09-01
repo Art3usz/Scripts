@@ -1,0 +1,23 @@
+1 Uruchom program "Windows PowerShell" jako administrator
+2 przeklej/przepisz wszystkie polecenia do konsoli/programu w celu zmiany trybu na:
+
+#OFF
+
+sc.exe config wuauserv start= disabled
+sc.exe stop wuauserv
+sc.exe start wuauserv
+
+#ON
+
+#Tryb Automatyczny
+
+set-service wuauserv –startup Automatic
+start-service wuauserv
+
+#Tryb Ręczny
+
+set-service wuauserv –startup Manual
+start-service wuauserv
+
+3 Przyciśnij klawisz ENTER
+5 Gratulacje właśnie wyłączyłeś (OFF) / właczyłeś (ON) aktualizacje systemu
